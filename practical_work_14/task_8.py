@@ -8,14 +8,15 @@
 # Отсортированный список: [–3, 0, 1, 4, 10]
 #def sort_list(lst):
 #lst = [1,  4, -3, 0, 10]
-import random
+
 from random import randint
 
-lst = [randint(-100, 100) for i in range(10)]
+lst = [randint(-100, 100) for i in range(10)] # Генерация списка чисел
 print(lst)
 
-for i in range(1, len(lst)):
-    if lst[i] >= lst[i - 1]: continue
+for i in range(1, len(lst)): # Сортировка списка по возрастанию
+    if lst[i] >= lst[i - 1]:
+        continue
     t = lst[i]
     while i > 0 and lst[i - 1] > t:
         lst[i] = lst[i - 1]

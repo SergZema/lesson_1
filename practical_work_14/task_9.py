@@ -22,3 +22,29 @@
 # print(id(test)) # Здесь вы увидите один айди
 # test = test[::-1]
 # print(id(test)) # А здесь уже другой
+
+from random import randint
+
+lst = [randint(-100, 100) for i in range(10)] # Генерация списка чисел
+print(lst)
+count = 0
+for i in range(len(lst)):  # Смещаем четные числа в левую часть списка
+    if lst[i] %2 != 0:
+        continue
+    t = lst[i]
+    lst[count] = t
+    count +=1
+
+lst = lst[:count-i-1]    # Срезаем правую часть списка с нечетными числами
+
+print(lst)
+
+for i in range(1, len(lst)):  # Сортируем список по убыванию
+    if lst[i] <= lst[i - 1]:
+        continue
+    t = lst[i]
+    while i > 0 and lst[i - 1] < t:
+        lst[i] = lst[i - 1]
+        i -= 1
+    lst[i] = t
+print(lst)
