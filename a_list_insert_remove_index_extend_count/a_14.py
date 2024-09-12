@@ -21,3 +21,23 @@
 
 """
 
+first_messag = input('Первое сообщение:')
+second_messag = input('Второе сообщение: ')
+first_list = []
+second_list = []
+first_list.extend(first_messag)
+second_list.extend(second_messag)
+count_first = first_list.count('!') + first_list.count('?')
+count_second = second_list.count('!') + second_list.count('?')
+# for i in first_list:
+#     if i == '!' or i == '?':
+#         count_first += 1
+# for i in second_list:
+#     if i == '!' or i == '?':
+#         count_second += 1
+if count_first > count_second:
+    print(first_messag + second_messag)
+elif count_first < count_second:
+    print(second_messag + first_messag)
+else:
+    print('Ой')

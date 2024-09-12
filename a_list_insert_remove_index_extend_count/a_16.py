@@ -19,3 +19,18 @@
 12 участников невозможно поделить на команды по 5 человек!
 
 """
+
+N = int(input('Введите кол-во участников: '))
+K = int(input('Кол-во человек в команде: '))
+
+members = []
+num = 1
+
+if N % K == 0:
+    for i in range(N // K):
+        members.append(list(range(num, num + K)))
+        num += K
+    print(members)
+else:
+    print(f'{N} участников невозможно разделить на команды по {K} человек!')
+
