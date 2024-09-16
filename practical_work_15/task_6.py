@@ -23,3 +23,32 @@
 # Советы и рекомендации
 # •	Помните, по условиям задачи размер роликов должен быть равен размеру ноги.
 # •	Чтобы подобрать максимальное количество пар, старайтесь найти наименьший возможный размер роликов для каждого размера ноги.
+
+n = int(input('Количество роликов: '))
+
+roller = []
+for i in range(1, n + 1):
+    size = int(input(f'Размер пары {i}: '))
+    roller.append(size)
+
+k = int(input('\nКоличество людей: '))
+size_foot = []
+for i in range(1, k + 1):
+    size = int(input(f'Размер ноги человека {i}: '))
+    size_foot.append(size)
+num = 0
+if n >= k:
+
+    for i in size_foot:
+        if i in roller:
+            num += 1
+            roller.remove(i)
+else:
+    for i in roller:
+        if i in size_foot:
+            num += 1
+            size_foot.remove(i)
+print('Наибольшее количество людей, которые могут взять ролики:', num)
+
+
+

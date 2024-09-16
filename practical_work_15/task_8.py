@@ -26,3 +26,29 @@
 # Последовательность: [1, 2, 3, 4, 5]
 # Нужно приписать чисел: 4
 # Сами числа: [4, 3, 2, 1]
+
+def is_palindrom(num_list):
+    reverse_list = []
+    for i_num in range(len(num_list) - 1, -1, -1):
+        reverse_list.append(num_list[i_num])
+    if num_list == reverse_list:
+        return True
+    else:
+        return False
+
+nums = [1,2,3,4,3,2]
+new_nums = []
+answer = []
+for i_nums in range(0, len(nums)):
+    for j_elem in range(i_nums, len(nums)):
+        new_nums.append((nums[j_elem]))
+    if is_palindrom(new_nums):
+        for i_answer in range(0, i_nums):
+            answer.append(nums[i_answer])
+        answer.reverse()
+        break
+    new_nums = []
+
+print('исходный список:', nums)
+print('нужно чисел для палиндрома:', len(answer))
+print('Список этих чисел:', answer)

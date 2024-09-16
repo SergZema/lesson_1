@@ -26,3 +26,21 @@
 # Выбывает человек под номером 3
 #
 # Остался человек под номером 4
+
+p = int(input('Сколько человек играет? '))
+n = int(input('Какое число в считалке? '))
+people = list(range(1, p + 1))
+
+out = 0
+
+while len(people) > 1:
+    print(f'Текущий круг людей {people}')
+    start_count = out % len(people)
+    out = (start_count + n - 1) % len(people)
+    print('Начало счёта с номера', people[start_count])
+    print('Выбывает человек под номером', people[out])
+    people.remove(people[out])
+    print()
+
+last_person = people[0]
+print('Остался человек под номером', last_person)
