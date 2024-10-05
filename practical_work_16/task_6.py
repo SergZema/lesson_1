@@ -6,3 +6,5 @@
 Напишите программу, которая генерирует такой список и выводит его на экран. Используйте только list comprehensions.
 
 """
+list = [[x for x in range(i, 13, 4)] for i in range(1,5)]
+print(list)

@@ -19,3 +19,16 @@
 Подробнее о нём вы можете узнать в этой статье.
 
 """
+from audioop import reverse
+
+line = input('Введите строку: ')
+begin = line.index('h')
+print(begin)
+end = line.rindex('h')
+print(end)
+# ff = line[begin+1:end:]
+# print(ff)
+# rev = ff[::-1]
+print(line[begin+1:end:])
+print('Развёрнутая последовательность между первым и последним h:', line[end - 1:begin:-1])
+# print(line[:begin + 1:] + rev + line[end::])
